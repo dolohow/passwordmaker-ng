@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   toolbar: theme.mixins.toolbar,
@@ -18,7 +17,7 @@ class Content extends React.Component {
     return (
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+        {this.props.children}
       </main>
     )
   }

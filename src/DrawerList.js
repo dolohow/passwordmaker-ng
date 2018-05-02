@@ -5,6 +5,8 @@ import Icon from 'material-ui/Icon';
 import Tooltip from 'material-ui/Tooltip';
 import ProfileList from './ProfileList';
 
+import { Link } from 'react-router-dom';
+
 const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   button: {
@@ -31,16 +33,20 @@ class DrawerList extends React.Component {
             <Icon>file_upload_icon</Icon>
           </Button>
         </Tooltip>
-        <Tooltip id="tooltip-fab" title="Settings">
-          <Button variant="fab" color="secondary" aria-label="settings" className={classes.button}>
-            <Icon>settings_icon</Icon>
-          </Button>
-        </Tooltip>
-        <Tooltip id="tooltip-fab" title="Info">
-          <Button variant="fab" color="secondary" aria-label="info" className={classes.button}>
-            <Icon>info_outline_icon</Icon>
-          </Button>
-        </Tooltip>
+        <Link to="/settings">
+          <Tooltip id="tooltip-fab" title="Settings">
+            <Button variant="fab" color="secondary" aria-label="settings" className={classes.button}>
+              <Icon>settings_icon</Icon>
+            </Button>
+          </Tooltip>
+        </Link>
+        <Link to="/info">
+          <Tooltip id="tooltip-fab" title="Info">
+            <Button variant="fab" color="secondary" aria-label="info" className={classes.button}>
+              <Icon>info_outline_icon</Icon>
+            </Button>
+          </Tooltip>
+        </Link>
         <ProfileList />
       </div>
     )

@@ -11,6 +11,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import DrawerList from './DrawerList';
 import Content from './Content';
 import Avatar from 'material-ui/Avatar';
+import { Switch, Route } from 'react-router-dom'
+import Info from './Info.js';
+import Settings from './Settings.js';
 
 const drawerWidth = 290;
 
@@ -103,7 +106,12 @@ class ResponsiveDrawer extends React.Component {
             <DrawerList />
           </Drawer>
         </Hidden>
-        <Content />
+        <Content>
+          <Switch>
+            <Route path="/info" component={Info} />
+            <Route path="/settings" component={Settings} />
+          </Switch>
+        </Content>
       </div>
     );
   }
