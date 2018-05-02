@@ -4,6 +4,7 @@ import List, { ListItem, ListItemSecondaryAction, ListItemText } from 'material-
 import Icon from 'material-ui/Icon';
 import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
 
 const styles = theme => ({
   listItem: {
@@ -52,6 +53,11 @@ class ProfileList extends React.Component {
             </Typography>
           }
           secondary={new Date(l.date).toDateString()}/>
+          <ListItemSecondaryAction>
+          <IconButton style={{color: 'rgba(0, 0, 0, 0.26)'}} className={classes.button} aria-label="Add an alarm">
+          <Icon>mode_edit_icon</Icon>
+          </IconButton>
+          </ListItemSecondaryAction>
           </ListItem>
         ))
       }
