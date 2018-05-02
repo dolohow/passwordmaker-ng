@@ -12,8 +12,8 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
-  list: {
-    padding: "10px",
+  drawerList: {
+    paddingTop: "10px"
   }
 });
 
@@ -21,7 +21,7 @@ class DrawerList extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.drawerList}>
         <div className={classes.toolbar} />
         <Tooltip id="tooltip-fab" title="Import">
           <Button variant="fab" color="secondary" aria-label="import" className={classes.button}>

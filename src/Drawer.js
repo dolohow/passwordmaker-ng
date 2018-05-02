@@ -42,7 +42,7 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    padding: "10px",
+    padding: "0 10px",
     [theme.breakpoints.up('md')]: {
       position: 'relative',
     },
