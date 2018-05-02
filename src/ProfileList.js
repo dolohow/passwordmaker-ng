@@ -45,19 +45,19 @@ class ProfileList extends React.Component {
       {
         profiles.map((l, i) => (
           <ListItem key={i} dense button className={classes.listItem}>
-          <Avatar src="../cat.svg" />
-          <ListItemText
-          primary={
-            <Typography style={{fontSize: "18px"}}>
-            {l.name}
-            </Typography>
-          }
-          secondary={new Date(l.date).toDateString()}/>
-          <ListItemSecondaryAction>
-          <IconButton style={{color: 'rgba(0, 0, 0, 0.26)'}} className={classes.button} aria-label="Add an alarm">
-          <Icon>mode_edit_icon</Icon>
-          </IconButton>
-          </ListItemSecondaryAction>
+            <Avatar src="../cat.svg" />
+            <ListItemText
+              primary={
+                <Typography style={{fontSize: "18px"}}>
+                  {l.name}
+                </Typography>
+              }
+              secondary={new Date(l.date).toDateString()} />
+            <ListItemSecondaryAction>
+              <IconButton style={{color: 'rgba(0, 0, 0, 0.26)'}} className={classes.button} aria-label="Add an alarm">
+                <Icon>mode_edit_icon</Icon>
+              </IconButton>
+            </ListItemSecondaryAction>
           </ListItem>
         ))
       }
