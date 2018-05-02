@@ -9,6 +9,7 @@ import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 import DrawerList from './DrawerList';
+import Content from './Content';
 import Avatar from 'material-ui/Avatar';
 
 const drawerWidth = 290;
@@ -36,18 +37,12 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
     padding: "10px",
     [theme.breakpoints.up('md')]: {
       position: 'relative',
     },
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
   },
   logo: {
       marginRight: "20px",
@@ -108,10 +103,7 @@ class ResponsiveDrawer extends React.Component {
             <DrawerList />
           </Drawer>
         </Hidden>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
-        </main>
+        <Content />
       </div>
     );
   }
