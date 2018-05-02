@@ -9,13 +9,15 @@ import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 import DrawerList from './DrawerList';
+import Icon from 'material-ui/Icon';
+import Avatar from 'material-ui/Avatar';
 
 const drawerWidth = 290;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 430,
+    height: '100%',
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -48,6 +50,9 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
   },
+  logo: {
+      marginRight: "20px",
+  }
 });
 
 class ResponsiveDrawer extends React.Component {
@@ -64,52 +69,53 @@ class ResponsiveDrawer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" noWrap>
-              Responsive drawer
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Hidden mdUp>
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <DrawerList />
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer
-            variant="permanent"
-            open
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            <DrawerList />
-          </Drawer>
-        </Hidden>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
-        </main>
+      <AppBar className={classes.appBar}>
+      <Toolbar>
+      <IconButton
+      color="inherit"
+      aria-label="open drawer"
+      onClick={this.handleDrawerToggle}
+      className={classes.navIconHide}
+      >
+      <MenuIcon />
+      </IconButton>
+      <Avatar className={classes.logo} src="../icons/passwdmaker128.png" />
+      <Typography variant="title" color="inherit" noWrap>
+      Password Maker
+      </Typography>
+      </Toolbar>
+      </AppBar>
+      <Hidden mdUp>
+      <Drawer
+      variant="temporary"
+      anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+      open={this.state.mobileOpen}
+      onClose={this.handleDrawerToggle}
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      ModalProps={{
+        keepMounted: true, // Better open performance on mobile.
+      }}
+      >
+      <DrawerList />
+      </Drawer>
+      </Hidden>
+      <Hidden smDown implementation="css">
+      <Drawer
+      variant="permanent"
+      open
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      >
+      <DrawerList />
+      </Drawer>
+      </Hidden>
+      <main className={classes.content}>
+      <div className={classes.toolbar} />
+      <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+      </main>
       </div>
     );
   }

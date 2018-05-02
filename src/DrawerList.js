@@ -5,6 +5,7 @@ import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import Tooltip from 'material-ui/Tooltip';
+import ProfileList from './ProfileList';
 
 const styles = theme => ({
   toolbar: theme.mixins.toolbar,
@@ -42,7 +43,7 @@ class DrawerList extends React.Component {
       <Icon>info_outline_icon</Icon>
       </Button>
       </Tooltip>
-      <List>Profiles</List>
+      <ProfileList />
       </div>
     )
   }
