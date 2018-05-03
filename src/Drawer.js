@@ -90,7 +90,7 @@ class ResponsiveDrawer extends React.Component {
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
             }} >
-            <DrawerList />
+            <DrawerList handleDrawerToggle={this.handleDrawerToggle}/>
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">

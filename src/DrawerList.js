@@ -19,30 +19,30 @@ const styles = theme => ({
 
 class DrawerList extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes, handleDrawerToggle } = this.props;
     return (
       <div className={classes.drawerList}>
         <div className={classes.toolbar} />
         <Tooltip id="tooltip-fab" title="Import">
-          <Button variant="fab" color="secondary" aria-label="import" className={classes.button}>
+          <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="import" className={classes.button}>
             <Icon>file_download_icon</Icon>
           </Button>
         </Tooltip>
         <Tooltip id="tooltip-fab" title="Export">
-          <Button variant="fab" color="secondary" aria-label="export" className={classes.button}>
+          <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="export" className={classes.button}>
             <Icon>file_upload_icon</Icon>
           </Button>
         </Tooltip>
         <Link to="/settings">
           <Tooltip id="tooltip-fab" title="Settings">
-            <Button variant="fab" color="secondary" aria-label="settings" className={classes.button}>
+            <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="settings" className={classes.button}>
               <Icon>settings_icon</Icon>
             </Button>
           </Tooltip>
         </Link>
         <Link to="/info">
           <Tooltip id="tooltip-fab" title="Info">
-            <Button variant="fab" color="secondary" aria-label="info" className={classes.button}>
+            <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="info" className={classes.button}>
               <Icon>info_outline_icon</Icon>
             </Button>
           </Tooltip>
