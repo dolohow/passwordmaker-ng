@@ -14,6 +14,7 @@ import Avatar from 'material-ui/Avatar';
 import { Switch, Route } from 'react-router-dom'
 import Info from './Info.js';
 import Settings from './Settings.js';
+import ProfileView from './ProfileView';
 
 const drawerWidth = 290;
 
@@ -107,6 +108,7 @@ class ResponsiveDrawer extends React.Component {
           <Switch>
             <Route path="/info" component={Info} />
             <Route path="/settings" component={Settings} />
+            <Route path="/profile/:profileName" component={ProfileView} />
           </Switch>
         </Content>
       </div>

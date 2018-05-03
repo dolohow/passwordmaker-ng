@@ -5,6 +5,7 @@ import Icon from 'material-ui/Icon';
 import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   listItem: {
@@ -20,6 +21,12 @@ const styles = theme => ({
     primary: {
       fontSize: "18px"
     }
+  },
+  Link: {
+    width: '90%',
+    display: 'inherit',
+    textDecoration: 'none',
+    outline: 'none',
   }
 });
 
@@ -45,6 +52,7 @@ class ProfileList extends React.Component {
       {
         profiles.map((l, i) => (
           <ListItem key={i} dense button className={classes.listItem}>
+          <Link to={`/profile/${l.name}`} className={classes.Link}>
             <Avatar src="../cat.svg" />
             <ListItemText
               primary={
@@ -53,11 +61,14 @@ class ProfileList extends React.Component {
                 </Typography>
               }
               secondary={new Date(l.date).toDateString()} />
+          </Link>
+          <Link to={`/profile/${l.name}/edit`}>
             <ListItemSecondaryAction>
               <IconButton style={{color: 'rgba(0, 0, 0, 0.26)'}} className={classes.button} aria-label="Add an alarm">
                 <Icon>mode_edit_icon</Icon>
               </IconButton>
             </ListItemSecondaryAction>
+          </Link>
           </ListItem>
         ))
       }
