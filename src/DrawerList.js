@@ -20,33 +20,28 @@ const styles = theme => ({
 class DrawerList extends React.Component {
   render() {
     const { classes, handleDrawerToggle } = this.props;
+
+    const options = [
+      { icon: 'file_download_icon', tooltip: 'Import', href: '/import' },
+      { icon: 'file_upload_icon', tooltip: 'Export', href: '/export' },
+      { icon: 'settings_icon', tooltip: 'Settings', href: '/settings' },
+      { icon: 'info_outline_icon', tooltip: 'Info', href: '/info' },
+    ];
+
     return (
       <div className={classes.drawerList}>
         <div className={classes.toolbar} />
-        <Tooltip id="tooltip-fab" title="Import">
-          <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="import" className={classes.button}>
-            <Icon>file_download_icon</Icon>
-          </Button>
-        </Tooltip>
-        <Tooltip id="tooltip-fab" title="Export">
-          <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="export" className={classes.button}>
-            <Icon>file_upload_icon</Icon>
-          </Button>
-        </Tooltip>
-        <Link to="/settings">
-          <Tooltip id="tooltip-fab" title="Settings">
-            <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="settings" className={classes.button}>
-              <Icon>settings_icon</Icon>
-            </Button>
-          </Tooltip>
-        </Link>
-        <Link to="/info">
-          <Tooltip id="tooltip-fab" title="Info">
-            <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="info" className={classes.button}>
-              <Icon>info_outline_icon</Icon>
-            </Button>
-          </Tooltip>
-        </Link>
+        {
+          options.map((option, i) => (
+            <Link key={i} to={option.href}>
+              <Tooltip id="tooltip-fab" title={option.tooltip}>
+                <Button onClick={handleDrawerToggle} variant="fab" color="secondary" aria-label="import" className={classes.button}>
+                  <Icon>{option.icon}</Icon>
+                </Button>
+              </Tooltip>
+            </Link>
+          ))
+        }
         <ProfileList />
       </div>
     )
