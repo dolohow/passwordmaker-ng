@@ -30,10 +30,7 @@ const styles = theme => ({
   appBar: {
     position: 'absolute',
     zIndex: theme.zIndex.drawer + 1,
-    marginLeft: drawerWidth,
-    // [theme.breakpoints.up('md')]: {
-    //   width: `calc(100% - ${drawerWidth}px)`,
-    // },
+    marginLeft: drawerWidth
   },
   navIconHide: {
     [theme.breakpoints.up('md')]: {
